@@ -2,7 +2,16 @@
 
 ## Install
 
-You need to install the [`b3sum` binary](https://github.com/BLAKE3-team/BLAKE3#the-b3sum-utility) to use this executable.
+### Arch Linux
+
+If you are using `yay`: `yay -Syu with-b3-git`
+
+Otherwise, a PKGBUILD is available at https://aur.archlinux.org/packages/with-b3-git
+
+### Other Linux
+
+- Install the [`b3sum` binary](https://github.com/BLAKE3-team/BLAKE3#the-b3sum-utility)
+- Copy the file `with-b3` in this repo to your `$PATH`
 
 ## Usage
 
