@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+
+set -e
+
+function usage() {
+  script_name=$(basename "$0")
+  cat <<EOF
+$script_name appends BLAKE3 checksum to a file path
+
+Usage: $script_name file_path(required) separator(optional, default: -)
+
+Examples:
+
+$ with-b3 a/b.txt 
+a/b.txt-b3-fb856ed0d5d880eb8a49f75e66f7c519c3376b8d7e3e7a08641beeeb4c225db9
+
+$ with-b3 a/b.txt /
+a/b.txt/b3-fb856ed0d5d880eb8a49f75e66f7c519c3376b8d7e3e7a08641beeeb4c225db9
+EOF
+}
+
+file_path=$1
+if [ -z "$file_path" ]; then
+  echo "Bad argument"
+  echo ""
+  usage
+  exit 1
+fi
+
+separator=$2
+if [ -z "$separator" ]; then
+  separator="-"
+fi
+
+sum=$(b3sum "$file_path")
+sum=$(echo "$sum" | cut -d ' ' -f 1)
+
+echo "${file_path}${separator}b3-${sum}"
+
+exit 0
