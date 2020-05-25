@@ -1,5 +1,7 @@
 # with-b3
 
+`with-b3` appends [BLAKE3](https://github.com/BLAKE3-team/BLAKE3) checksum to a file path.
+
 ## Install
 
 ### Arch Linux
@@ -15,9 +17,7 @@ Otherwise, a PKGBUILD is available at https://aur.archlinux.org/packages/with-b3
 
 ## Usage
 
-`with-b3` appends [BLAKE3](https://github.com/BLAKE3-team/BLAKE3) checksum to a file path.
-
-Usage: `with-b3` `file_path`(required) `separator`(optional, default: `-`)
+`with-b3` `file_path`(required) `separator`(optional, default: `-`)
 
 Examples:
 
