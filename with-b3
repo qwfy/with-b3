@@ -32,8 +32,7 @@ if [ -z "$separator" ]; then
   separator="-"
 fi
 
-sum=$(b3sum "$file_path")
-sum=$(echo "$sum" | cut -d ' ' -f 1)
+sum=$(b3sum --no-names "$file_path")
 
 echo "${file_path}${separator}b3-${sum}"
 
